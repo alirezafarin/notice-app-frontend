@@ -8,6 +8,8 @@ import ScrollToTop from 'Components/Main/ScrollToTop';
 import PrivateRoute from "Components/Main/PrivateRoute";
 import GlobalModal from 'Components/Main/GlobalModal';  
 import GlobalAlert from './GlobalAlert';
+import Home from 'Components/Routes/Home';
+import Bar from 'Components/CustomComponents/Bar';
 
 class App extends React.Component {
   
@@ -16,8 +18,11 @@ class App extends React.Component {
       <div className="App">
         <Router history={history}>
           <ScrollToTop />
+          <Bar />
           <div className='inbetween-bars'>
             <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/home" exact component={Home} />
               <Redirect to='/' />
             </Switch>
           </div>

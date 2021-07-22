@@ -1,0 +1,19 @@
+@import '../mixins/mixins';
+
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  @include flex(space-between, center, row-reverse);
+  padding: 5px 0px;
+  border-bottom: 1px solid $grey;
+  background-color: white;
+  z-index: 1200;
+}
+
+.bar-logo img {
+  width: 60px;
+  margin: 0 10px;
+}
