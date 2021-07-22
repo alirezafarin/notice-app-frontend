@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import megaphone from 'icons/megaphone.png';
+import CustomButton from 'Components/MuiComponents/CustomButton';
 
 class Bar extends Component {
   render() {
@@ -9,8 +10,13 @@ class Bar extends Component {
         <div className='bar-logo'>
           <img src={megaphone} alt='logo' />
         </div>
-        <div>
-          afsf
+        <div className='bar-button'>
+          <CustomButton
+            text='ورود'
+            color='secondary'
+            icon='profile'
+            variant='outlined'
+          />
         </div>
       </div>
     )

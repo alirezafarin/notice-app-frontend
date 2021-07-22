@@ -30,6 +30,10 @@
   margin: 0 10px;
 }
 
+.bar-button {
+  margin: 0 10px;
+}
+
 * {
   -moz-user-select: none;
   /* Firefox */
