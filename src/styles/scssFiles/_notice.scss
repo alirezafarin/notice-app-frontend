@@ -18,8 +18,13 @@ $radius: 10px;
   margin: 0 10px;
 }
 
-.bar-button {
+.bar-buttons {
   margin: 0 10px;
+  @include flex(space-between, center);
+}
+
+.bar-buttons button {
+  margin: 0 5px;
 }
 
 #home {
