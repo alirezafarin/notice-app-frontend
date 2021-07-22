@@ -1,6 +1,7 @@
 import CustomButton from 'Components/MuiComponents/CustomButton'
 import React from 'react'
 import logo from 'icons/megaphone.png';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 export default function NoticeCard() {
   return (
@@ -17,6 +18,14 @@ export default function NoticeCard() {
         <div className='notice-card-item-details-desc'>
           {/* {service.intorduction} */}
           jdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafd
+        </div>
+        <div className='notice-card-item-details-location'>
+          <div>
+            <LocationOnIcon fontSize='small' />
+          </div>
+          <div>
+            تهران
+          </div>
         </div>
         <div className='notice-card-item-details-edit'>
           <CustomButton
