@@ -2,8 +2,15 @@
 @import 'mixins/mixins';
 @import 'scssFiles/notice.scss';
 
+@font-face {
+  font-family: 'Sahel';
+  src: url('./fonts/Sahel.eot?#') format('eot'),  /* IE6–8 */
+       url('./fonts/Sahel.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('./fonts/Sahel.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
 * {
-  // font-family: iranyekan !important;
+  font-family: Sahel !important;
   @include disableSelectionAndCopy;
 }
 
@@ -30,7 +37,7 @@ body {
 }
 
 .inbetween-bars {
-  padding-bottom: 10px;
+	padding-top: 75px;
   // lines below are temporarily added for responsiveness issues
   max-width: 2000px;
   // width: 100%;

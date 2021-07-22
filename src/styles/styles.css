@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #top-bar {
   position: fixed;
   top: 0;
@@ -34,7 +35,14 @@
   margin: 0 10px;
 }
 
+@font-face {
+  font-family: 'Sahel';
+  src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
 * {
+  font-family: Sahel !important;
   -moz-user-select: none;
   /* Firefox */
   -ms-user-select: none;
@@ -70,7 +78,7 @@ body {
 }
 
 .inbetween-bars {
-  padding-bottom: 10px;
+  padding-top: 75px;
   max-width: 2000px;
   margin: auto;
 }
