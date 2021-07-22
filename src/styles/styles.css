@@ -1,0 +1,77 @@
+* {
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer */
+  -khtml-user-select: none;
+  /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none;
+  /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none;
+  /* Disable Android and iOS callouts*/
+}
+
+a {
+  text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: rtl;
+  margin: 0px !important;
+}
+
+#root {
+  background-color: #ffffff !important;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.inbetween-bars {
+  padding-bottom: 10px;
+  max-width: 2000px;
+  margin: auto;
+}
+
+.container {
+  padding: 10px 0px 0px 0px;
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 10px 0px 0px 0px;
+  }
+}
+
+.global-modal-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.global-modal-title {
+  font-size: 18px;
+}
+
+input {
+  -webkit-user-select: text;
+}
+/*# sourceMappingURL=styles.css.map */

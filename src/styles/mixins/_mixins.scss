@@ -1,0 +1,68 @@
+@mixin disableSelectionAndCopy {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+@mixin hideScrollBar {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin leftSpaceForlastItem{
+  // to add left space for the last item in a scolled div
+  &::after {
+    content: '';
+    border-left: 20px solid transparent; 
+  }
+}
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap ){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap; 
+}
+
+@mixin centerAbsoluteVertically {
+  top: 50% !important;
+  transform: translate(0%,-50%);
+}
+
+@mixin centerAbsolute {
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+@mixin flexShrinkAndGrow {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+@mixin addBorder($color, $width: 2px, $radius: 14px) {
+  border: solid $width $color;
+  border-radius: $radius;
+}
+
+@mixin addBoxShadow() {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+}
+
+@mixin multilineEllipsis($line: 3) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

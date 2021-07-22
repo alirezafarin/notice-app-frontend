@@ -1,0 +1,60 @@
+@import 'mixins/mixins';
+
+* {
+  // font-family: iranyekan !important;
+  @include disableSelectionAndCopy;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: rtl;
+  margin: 0px !important;
+}
+
+#root {
+  background-color: #ffffff !important;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.inbetween-bars {
+  padding-bottom: 10px;
+  // lines below are temporarily added for responsiveness issues
+  max-width: 2000px;
+  // width: 100%;
+  margin: auto;
+}
+
+.container {
+  // padding: 10px 20px 0px 20px;
+  padding: 10px 0px 0px 0px;
+}
+
+@media( max-width: 425px ) {
+  .container {
+    // padding: 10px 10px 0px 10px;
+    padding: 10px 0px 0px 0px;
+  }
+}
+
+.global-modal-title-container {
+	@include flex(space-between, center);
+}
+
+.global-modal-title {
+	font-size: 18px;
+}
+
+input {
+	-webkit-user-select: text;
+}
