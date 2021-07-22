@@ -15,7 +15,7 @@ class Bar extends Component {
             text='ورود'
             color='primary'
             icon='profile'
-            variant='outlined'
+            variant='contained'
           />
         </div>
       </div>

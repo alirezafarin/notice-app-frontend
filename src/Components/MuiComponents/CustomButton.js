@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +38,8 @@ function CustomButton(props) {
 
   let icons = {
     'profile': <AccountBoxIcon color='default' />,
-    'add': <AddCircleIcon color='default' />
+    'add': <AddCircleIcon color='default' />,
+    'next': <NavigateNextIcon color='default' />,
   };
 
   return (
@@ -53,13 +55,9 @@ function CustomButton(props) {
         root: classes.btn,
         outlined: (props.icon === 'right') ? classes.outlined : ''
       }}
-      // className={classes.button}
       startIcon={!props.loading&&(!props.image) ? icons[props.icon] : null}
       endIcon={!props.loading&&(props.image) ? icons[props.icon] : null}
       disabled={props.disabled||props.loading}
-      component={props.component}
-      href={props.href}
-      target={props.target}
     >
       {props.loading && (
         // <CircularProgress className={classes.loading} size={22} thickness={3} color='inherit' />
