@@ -13,7 +13,7 @@ class Bar extends Component {
         <div className='bar-button'>
           <CustomButton
             text='ورود'
-            color='secondary'
+            color='primary'
             icon='profile'
             variant='outlined'
           />

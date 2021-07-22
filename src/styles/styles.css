@@ -35,6 +35,10 @@
   margin: 0 10px;
 }
 
+.home-container {
+  padding: 10px;
+}
+
 @font-face {
   font-family: 'Sahel';
   src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
@@ -78,8 +82,8 @@ body {
 }
 
 .inbetween-bars {
-  padding-top: 75px;
-  max-width: 2000px;
+  padding-top: 80px;
+  max-width: 1200px;
   margin: auto;
 }
 

@@ -10,10 +10,10 @@ import { darkBlue, darkerBlue } from 'globalVariables';
 const theme = createTheme({
   palette: {
     primary: {
-      main: darkBlue,
+      main: darkerBlue,
     },  
     secondary: {
-      main: darkerBlue
+      main: darkBlue
     },
   },
   breakpoints: {

@@ -3,6 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +36,8 @@ function CustomButton(props) {
   const classes = useStyles(props);
 
   let icons = {
-    'profile': <AccountBoxIcon color='default' className={classes.icon} />,
+    'profile': <AccountBoxIcon color='default' />,
+    'add': <AddCircleIcon color='default' />
   };
 
   return (
