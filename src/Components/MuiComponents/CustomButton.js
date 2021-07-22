@@ -37,9 +37,9 @@ function CustomButton(props) {
   const classes = useStyles(props);
 
   let icons = {
-    'profile': <AccountBoxIcon color='default' />,
-    'add': <AddCircleIcon color='default' />,
-    'next': <NavigateNextIcon color='default' />,
+    'profile': <AccountBoxIcon color='inherit' />,
+    'add': <AddCircleIcon color='inherit' />,
+    'next': <NavigateNextIcon color='inherit' />,
   };
 
   return (

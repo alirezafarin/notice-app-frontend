@@ -1,7 +1,7 @@
 import { SET_LOADING } from 'redux/types';
 
 const initialState = {
-  
+  getAll: false
 }
 
 export default (state = initialState, { type, payload }) => {

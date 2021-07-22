@@ -1,7 +1,9 @@
+import { apiCall } from 'Components/axiosSettings';
 import { 
   SET_LOADING,
   SET_ALERT,
   SET_MODAL,
+  GET_NOTICES,
 } from 'redux/types';
 
 // *****************
@@ -63,4 +65,16 @@ export const setModal = (openModal=false, title='' ,content=null) => {
       payload: { openModal, title, content }
     })
   }
+}
+
+// 
+export const getNotices = (resolve=()=>{}) => {
+
+  return apiCall({
+    method: 'get',
+    url: "/getAllnotices",
+    actionType: GET_NOTICES,
+    loading: 'getAll',
+    resolve
+  });
 }
