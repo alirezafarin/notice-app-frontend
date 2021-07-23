@@ -6,6 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { connect } from 'react-redux';
 import { setModal } from 'redux/actions';
 import LoginModal from 'Components/Modals/LoginModal';
+import { Link } from 'react-router-dom';
 
 function Bar(props) { 
 
@@ -13,9 +14,9 @@ function Bar(props) {
 
   return(
     <div id='top-bar'>
-      <div className='bar-logo'>
+      <Link to='/' className='bar-logo'>
         <img src={megaphone} alt='logo' />
-      </div>
+      </Link>
       <div className='bar-buttons'>
         <CustomButton
           text='ورود'
