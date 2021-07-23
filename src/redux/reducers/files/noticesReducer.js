@@ -1,7 +1,8 @@
-import { GET_NOTICES } from "redux/types"
+import { GET_NOTICES, GET_NOTICE_DETIALS } from "redux/types"
 
 const initialState = {
-  allNotices: []
+  allNotices: [],
+  noticeDetails: {}
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -10,6 +11,10 @@ export default (state = initialState, { type, payload }) => {
   case GET_NOTICES:
     return { ...state, allNotices: payload }
 
+  case GET_NOTICE_DETIALS:
+    return { ...state,
+             noticeDetails: { ...state.noticeDetails, [payload._id]: payload } }
+  
   default:
     return state
   }

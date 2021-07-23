@@ -4,6 +4,7 @@ import {
   SET_ALERT,
   SET_MODAL,
   GET_NOTICES,
+  GET_NOTICE_DETIALS,
 } from 'redux/types';
 
 ////////////////////////////////////////////////////////////////
@@ -79,5 +80,17 @@ export const getAllNotices = () => {
     url: "/getAllnotices",
     actionType: GET_NOTICES,
     loading: 'getAll'
+  });
+}
+
+// get notice details
+export const getNoticeById = (id='') => {
+
+  return apiCall({
+    method: 'get',
+    params: { id },
+    url: "/getNoticeById",
+    actionType: GET_NOTICE_DETIALS,
+    loading: 'getDetails'
   });
 }

@@ -1,6 +1,5 @@
 import CustomButton from 'Components/MuiComponents/CustomButton'
 import React from 'react'
-import logo from 'icons/megaphone.png';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { domain } from 'globalVariables';
 import { useMediaQuery } from '@material-ui/core';
