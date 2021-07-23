@@ -209,6 +209,84 @@
   overflow: hidden;
 }
 
+.login-modal-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-modal-container p {
+  text-align: right;
+}
+
+.login-modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 5px 0px;
+}
+
+.level0-header {
+  padding: 10px 0px;
+}
+
+.login-modal-header button {
+  margin: 0 !important;
+}
+
+.login-modal-title {
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.login-modal-body {
+  margin: 10px;
+}
+
+.input-label {
+  color: #1a1a1a;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.input-label-remaining {
+  color: #e0e4ec;
+}
+
+.login-modal-container button {
+  margin: 0 10px 10px 10px;
+  width: 94% !important;
+}
+
+.login-modal-container input {
+  padding: 12.5px 14px;
+}
+
 @media (max-width: 1000px) {
   .notice-card-item {
     height: 165px;
@@ -334,6 +412,7 @@ body {
 
 .global-modal-title {
   font-size: 18px;
+  color: #1a1a1a;
 }
 
 input {

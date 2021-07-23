@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 
@@ -28,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     padding: '0 10px',
     fontSize: '17px',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    color: (props) => (props.textColor) ? props.textColor : ''
   }
 }));
 
@@ -40,6 +42,7 @@ function CustomButton(props) {
     'profile': <AccountBoxIcon color='inherit' />,
     'add': <AddCircleIcon color='inherit' />,
     'next': <NavigateNextIcon color='inherit' />,
+    'register': <AssignmentIcon color='inherit' />,
   };
 
   return (

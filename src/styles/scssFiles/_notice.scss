@@ -103,6 +103,57 @@ $radius: 10px;
   overflow: hidden;
 }
 
+.login-modal-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-modal-container p {
+  text-align: right;
+}
+
+.login-modal-header {
+  @include flex(space-between, center);
+  padding: 5px 0px;
+}
+
+.level0-header {
+  padding: 10px 0px;
+}
+
+.login-modal-header button {
+  margin: 0 !important;
+}
+
+.login-modal-title {
+  font-size: 20px;
+  padding: 5px 0;
+}
+ 
+.login-modal-body {
+  margin: 10px ;
+}
+
+.input-label {
+  color: $black;
+  font-size: 14px;
+  @include flex(space-between);
+}
+
+.input-label-remaining {
+  color: $grey;
+}
+
+.login-modal-container button {
+  margin: 0 10px 10px 10px;
+  width: 94% !important;
+}
+
+.login-modal-container input{
+  padding: 12.5px 14px;
+}
+
+
 @media (max-width: 1000px) {
   .notice-card-item {
     height: 165px;
