@@ -6,7 +6,7 @@ import {
   GET_NOTICES,
 } from 'redux/types';
 
-// *****************
+////////////////////////////////////////////////////////////////
 // loading handler
 export const setLoading = (prop, bool, dispatch=null) => {
 
@@ -24,7 +24,7 @@ export const setLoading = (prop, bool, dispatch=null) => {
     payload: { [prop]: bool } 
   };
 }
-
+////////////////////////////////////////////////////////////////
 // alert handler
 export const setAlert = (open = false, title = '', type='', dispatch=null) => {
 
@@ -43,8 +43,8 @@ export const setAlert = (open = false, title = '', type='', dispatch=null) => {
   };
 }
 
-// **************
-// modal 
+////////////////////////////////////////////////////////////////
+// modal handler
 export const setModal = (openModal=false, title='' ,content=null) => {
 
   return (dispatch, getState) => {
@@ -67,14 +67,17 @@ export const setModal = (openModal=false, title='' ,content=null) => {
   }
 }
 
-// 
-export const getNotices = (resolve=()=>{}) => {
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// api calls
+
+// get All Notices
+export const getAllNotices = () => {
 
   return apiCall({
     method: 'get',
     url: "/getAllnotices",
     actionType: GET_NOTICES,
-    loading: 'getAll',
-    resolve
+    loading: 'getAll'
   });
 }

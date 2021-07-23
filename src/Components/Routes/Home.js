@@ -3,24 +3,12 @@ import NoticeCard from 'Components/CustomComponents/NoticeCard'
 import CustomButton from 'Components/MuiComponents/CustomButton'
 import React from 'react';
 import { connect } from 'react-redux'
-import axios from 'axios';
-import { domain } from 'globalVariables';
-import { apiCall } from 'Components/axiosSettings';
-import { getNotices, setAlert, setLoading } from 'redux/actions';
+import { getAllNotices } from 'redux/actions';
 
 function Home(props) {
 
   React.useEffect(() => {
-    // axios.get(`${domain}/getAllnotices`)
-    // .then((res) => console.log(res))
-
-    apiCall({
-          method: 'get',
-          url: '/getAllnotices',
-          loading: 'getAll',
-          componentProps: props
-        })().then((res) => console.log(res)).catch((err) => console.log(err, 'err'));
-    // props.getNotices((res) => console.log(res, 'res'));
+    props.getAllNotices();
   }, [])
 
   const matches = useMediaQuery('(max-width:599px)');
@@ -45,7 +33,5 @@ function Home(props) {
 }
 
 export default connect(null, {
-  getNotices,
-  setLoading,
-  setAlert
+  getAllNotices
 })(Home);

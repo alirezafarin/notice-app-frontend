@@ -59,6 +59,7 @@ export const apiCall = ({
         }
       })
       .catch((err) => {
+        console.log(err);
         setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی در ارتباط با سرور پیش آمده است');
         reject(err);
       });
@@ -70,7 +71,7 @@ export const apiCall = ({
       }
   
       if(actionType) {
-        let payload = response.data.data;
+        let payload = response.data.result;
         dispatch({
             type: actionType,
             payload,
