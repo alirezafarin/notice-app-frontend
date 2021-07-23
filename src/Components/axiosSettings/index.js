@@ -64,7 +64,6 @@ export const apiCall = ({
         reject(err);
       });
   
-      setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
       // after catch end the proccess
       if( !response ) {
         return;
@@ -76,13 +75,16 @@ export const apiCall = ({
             type: actionType,
             payload,
         });      
+        setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
         resolve(response);    
       }
       else {
         resolve(response);
+        setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
         return response;
       }
     } catch (error) {
+      setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
       setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
     }
   }

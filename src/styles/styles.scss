@@ -67,3 +67,10 @@ body {
 input {
 	-webkit-user-select: text;
 }
+
+.preLoader {
+  @include flex(center, center, column);
+  // width: 50px;
+  // height: 40px;
+  margin: 10px auto;
+}

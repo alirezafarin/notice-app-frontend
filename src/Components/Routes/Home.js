@@ -1,5 +1,6 @@
 import { useMediaQuery } from '@material-ui/core';
 import NoticeCard from 'Components/CustomComponents/NoticeCard'
+import Spinner from 'Components/CustomComponents/Spinner';
 import CustomButton from 'Components/MuiComponents/CustomButton'
 import React from 'react';
 import { connect } from 'react-redux'
@@ -32,7 +33,12 @@ function Home(props) {
         </div> 
       }
       <div className='home-notices'>
-        {renderNotices()}
+        <Spinner
+          Component={renderNotices()}
+          isLoading={props.loading}
+          data={props.notices}
+          // noContentMsg='آگهی وجود ندارد'
+        />
       </div>
     </div>
   )
