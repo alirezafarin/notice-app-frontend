@@ -46,7 +46,7 @@ export const apiCall = ({
   reject= ()=>{}
 }) => {
   return async function(dispatch=null) {
-    try {
+    // try {
       setLoadingCorrectly(loading, actionType, dispatch, componentProps, true);
     
       let response = await axiosInstance({
@@ -59,34 +59,34 @@ export const apiCall = ({
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response)
         setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
         setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی در ارتباط با سرور پیش آمده است');
         reject(err);
       });
-  
-      // after catch end the proccess
-      if( !response ) {
-        return;
-      }
-  
-      if(actionType) {
-        let payload = response.data.result;
-        dispatch({
-            type: actionType,
-            payload,
-        });      
-        setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-        resolve(response);    
+
+      if( response ) {
+        if(actionType) {
+          let payload = response.data.result;
+          dispatch({
+              type: actionType,
+              payload,
+          });      
+          setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
+          resolve(response);    
+        }
+        else {
+          resolve(response);
+          setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
+          return response;
+        }
       }
       else {
-        resolve(response);
-        setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-        return response;
+        throw new Error('مشکلی پیش آمده است.');
       }
-    } catch (error) {
-      setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-      setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
-    }
+    // } catch (error) {
+    //   setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
+    //   setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
+    // }
   }
 }
