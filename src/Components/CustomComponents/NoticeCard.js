@@ -32,7 +32,7 @@ export default function NoticeCard({ notice={}, ...props }) {
             </div>
           </div>
           {(matches) &&
-            <div className='notice-card-item-details-edit'>
+            <div className='notice-card-item-details-click'>
               <CustomButton
                 variant='outlined'
                 color='secondary'

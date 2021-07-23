@@ -46,11 +46,12 @@ $radius: 10px;
   @include flex(flex-start);
   // margin: 0px 5px;
   background-color: $pale;
-  width: 600px;
+  width: 48vw;
+  max-width: 600px;
   @include flexShrinkAndGrow();
-  height: 177px;
+  height: 195px;
   border-radius: $radius; 
-  margin: 10px;
+  margin: 10px 5px;
   @include addBoxShadow();
   overflow: hidden;
 }
@@ -60,7 +61,7 @@ $radius: 10px;
 }
 
 .notice-card-item-img img {
-  width: 200px;
+  width: 100%;
   height: 100%;
 }
 
@@ -86,69 +87,68 @@ $radius: 10px;
   @include multilineEllipsis(2);
 }
 
-.notice-card-item-details-edit {
+.notice-card-item-details-click {
   text-align: left;
   width: 100%;
+  margin-top: 7px;
 }
 
 .notice-card-item-details-location {
   @include flex();
   font-size: 14px;
   color: $darker-blue;
-  @include multilineEllipsis(1);
+  width: 100%;
+  margin-top: 10px;
+  max-height: 50px;
+  overflow: hidden;
 }
 
 @media (max-width: 1000px) {
   .notice-card-item {
-    flex-direction: column;
-    height: 275px;
-    max-width: 200px;
-    width: auto;
-    margin: 10px 5px;
-  }
-
-  .notice-card-item-details-name {
-    font-size: 16px;
-  }
-  
-  .notice-card-item-details-desc {
-    font-size: 14px;
-    height: 57px;
-  }
-
-  .notice-card-item-img {
-    width: 200px;
-    // width: 100%;
-    height: 130px;
-  }
-
-  .notice-card-item-img img {
-    width: 100%;
-    height: 100%;
+    height: 165px;
+    margin: 5px;
+    width: 47vw;
   }
 
   .notice-card-item-details {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-@media (max-width: 500px) {
-  .notice-card-item {
-    max-width: 44vw;
+    width: 55%;
   }
 
   .notice-card-item-img {
-    width: 44vw;
+    width: 45%;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .notice-card-item {
-    max-width: 200px;
+    height: 165px;
+    margin: 5px;
+    width: 95vw;
+  }
+
+  .notice-card-item-details {
+    width: 60%;
   }
 
   .notice-card-item-img {
-    width: 200px;
+    width: 40%;
+  }
+}
+
+@media (max-width: 355px) {
+  .notice-card-item {
+    flex-direction: column;
+    height: 290px;
+    width: 100%;
+    max-width: 210px;
+  }
+
+  .notice-card-item-img {
+    width: 100%;
+    height: 140px;
+  }
+
+  .notice-card-item-details {
+    width: 100%;
   }
 }
