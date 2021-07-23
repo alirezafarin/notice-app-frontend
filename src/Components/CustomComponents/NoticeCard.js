@@ -2,29 +2,28 @@ import CustomButton from 'Components/MuiComponents/CustomButton'
 import React from 'react'
 import logo from 'icons/megaphone.png';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { domain, imageDomain } from 'globalVariables';
 
-export default function NoticeCard() {
+export default function NoticeCard({ notice={}, ...props }) {
   return (
     <>
     <div className='notice-card-item'>
       <div className='notice-card-item-img'>
-        <img src={logo} alt='' />
+        <img src={domain + '/' + notice.imageName} alt='' />
       </div>
       <div className='notice-card-item-details'>
         <div className='notice-card-item-details-name'>
-          {/* {`${service.type.name} ${service.name}`} */}
-          fdsfjl; dfj sjdfdsfjl; dfj sjdfdsfjl; dfj sjdfdsfjl; dfj sjdfdsfjl; dfj sjd
+          {notice.name}
         </div>
         <div className='notice-card-item-details-desc'>
-          {/* {service.intorduction} */}
-          jdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafdjdlil;dsafd
+          {notice.description}
         </div>
         <div className='notice-card-item-details-location'>
           <div>
             <LocationOnIcon fontSize='small' />
           </div>
           <div>
-            تهران
+            {notice.address}
           </div>
         </div>
         <div className='notice-card-item-details-edit'>

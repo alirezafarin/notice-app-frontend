@@ -7,4 +7,6 @@ export const darkGrey = '#555555';
 export const pale = '#f7f7f7';
 
 // domain
-export const domain = 'http://localhost:3500';
+export const domain = 'http://192.168.1.9:3500';
+// imageDomain
+export const imageDomain = domain + '/images';

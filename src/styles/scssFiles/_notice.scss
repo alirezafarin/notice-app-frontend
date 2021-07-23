@@ -11,10 +11,16 @@ $radius: 10px;
   border-bottom: 1px solid $grey;
   background-color: white;
   z-index: 1200;
+  height: 50px !important;
+}
+
+.bar-logo {
+  @include flex(center, center);
 }
 
 .bar-logo img {
   width: 60px;
+  height: 50px !important;
   margin: 0 10px;
 }
 
@@ -33,6 +39,7 @@ $radius: 10px;
 
 .home-notices {
   margin-top: 20px;
+  @include flex(center, flex-start, row, wrap);
 }
 
 .notice-card-item {
@@ -43,6 +50,9 @@ $radius: 10px;
   @include flexShrinkAndGrow();
   height: 177px;
   border-radius: $radius; 
+  margin: 10px;
+  @include addBoxShadow();
+  overflow: hidden;
 }
 
 .notice-card-item-img {
@@ -69,7 +79,7 @@ $radius: 10px;
 }
 
 .notice-card-item-details-desc {
-  font-size: 15px;
+  font-size: 14px;
   color: $dark-grey;
   max-height: 50px;
   word-break: break-word;
@@ -79,21 +89,22 @@ $radius: 10px;
 .notice-card-item-details-edit {
   text-align: left;
   width: 100%;
-  padding-top: 10px;
 }
 
 .notice-card-item-details-location {
   @include flex();
-  color: $dark-grey;
+  font-size: 14px;
+  color: $darker-blue;
   @include multilineEllipsis(1);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .notice-card-item {
     flex-direction: column;
-    height: auto;
+    height: 275px;
     max-width: 200px;
     width: auto;
+    margin: 10px 5px;
   }
 
   .notice-card-item-details-name {
@@ -125,4 +136,24 @@ $radius: 10px;
     display: none;
   }
 
+}
+
+@media (max-width: 500px) {
+  .notice-card-item {
+    max-width: 44vw;
+  }
+
+  .notice-card-item-img {
+    width: 44vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .notice-card-item {
+    max-width: 200px;
+  }
+
+  .notice-card-item-img {
+    width: 200px;
+  }
 }

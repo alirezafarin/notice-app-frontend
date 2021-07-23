@@ -13,6 +13,12 @@ function Home(props) {
 
   const matches = useMediaQuery('(max-width:599px)');
 
+  const renderNotices = () => {
+    return props.notices.map((notice) => {
+      return <NoticeCard notice={notice} key={notice._id} />
+    })
+  }
+
   return (
     <div id='home'>
       {matches &&
@@ -26,12 +32,17 @@ function Home(props) {
         </div> 
       }
       <div className='home-notices'>
-        <NoticeCard />
+        {renderNotices()}
       </div>
     </div>
   )
 }
 
-export default connect(null, {
+const mapStateToProps = (state) => ({
+  notices: state.notices.allNotices,
+  loading: state.loading.getAll  
+})
+
+export default connect(mapStateToProps, {
   getAllNotices
 })(Home);
