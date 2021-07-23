@@ -10,6 +10,7 @@ import GlobalModal from 'Components/Main/GlobalModal';
 import GlobalAlert from './GlobalAlert';
 import Home from 'Components/Routes/Home';
 import Bar from 'Components/CustomComponents/Bar';
+import Notice from 'Components/Routes/Notice';
 
 class App extends React.Component {
   
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/home" exact component={Home} />
+              <Route path="/notice/:id" exact component={Notice} />
               <Redirect to='/' />
             </Switch>
           </div>
