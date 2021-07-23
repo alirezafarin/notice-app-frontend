@@ -46,39 +46,43 @@ export const apiCall = ({
   reject= ()=>{}
 }) => {
   return async function(dispatch=null) {
-
-    setLoadingCorrectly(loading, actionType, dispatch, componentProps, true);
+    try {
+      setLoadingCorrectly(loading, actionType, dispatch, componentProps, true);
     
-    let response = await axiosInstance({
-      method: method,
-      url: url,
-      params: params,
-      data: body,
-      headers: {
-        // token: localStorage.getItem('Token')
+      let response = await axiosInstance({
+        method: method,
+        url: url,
+        params: params,
+        data: body,
+        headers: {
+          // token: localStorage.getItem('Token')
+        }
+      })
+      .catch((err) => {
+        setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی در ارتباط با سرور پیش آمده است');
+        reject(err);
+      });
+  
+      setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
+      // after catch end the proccess
+      if( !response ) {
+        return;
       }
-    })
-    .catch((err) => {
-      setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی در ارتباط با سرور پیش آمده است');
-      reject(err);
-    });
-
-    setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-    // after catch end the proccess
-    if( !response ) {
-      return;
-    }
-
-    if(actionType) {
-      let payload = response.data.data;
-      dispatch({
-          type: actionType,
-          payload,
-      });      
-      resolve(payload);    
-    }
-    else {
-      return response;
+  
+      if(actionType) {
+        let payload = response.data.data;
+        dispatch({
+            type: actionType,
+            payload,
+        });      
+        resolve(response);    
+      }
+      else {
+        resolve(response);
+        return response;
+      }
+    } catch (error) {
+      setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
     }
   }
 }
