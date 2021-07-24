@@ -3,8 +3,11 @@ import Input from 'Components/MuiComponents/Input';
 import { connect } from 'react-redux'
 import PasswordInput from 'Components/MuiComponents/PasswordInput';
 import React, { useState } from 'react'
-import { setModal } from 'redux/actions';
+import { setModal, setAlert, setLoading, setProfile } from 'redux/actions';
 import RegisterModal from './RegisterModal';
+import { apiCall } from 'Components/axiosSettings';
+import { addToken } from 'globalVariables/helperFunctions';
+import history from 'history/history';
 
 function LoginModal(props) {
 
@@ -22,7 +25,38 @@ function LoginModal(props) {
     if(isInputEmpty()) {
       return setState({ ...state, error: true });
     }
+    
     // send apiCall
+    apiCall({
+      url: '/user/login',
+      method: 'post',
+      body: {
+        phoneNumber: state.phoneNumber,
+        password: state.password
+      },
+      loading: 'login',
+      componentProps: props
+    })()
+    .then((res) => {
+      if( !res ) {
+        return;
+      }
+
+      const token = res.data.result.token;
+      addToken(token);
+
+      const user = res.data.result.user;
+      props.setProfile(user);
+
+      props.setAlert(true, 'با موفقیت وارد شدید.', 'success');
+      props.setModal(false);
+
+      let redirectTo = localStorage.getItem('redirectAfterLogin');
+      if(redirectTo) {
+        history.push(redirectTo);
+      }
+    })
+
   }
 
   const renderButton = () => {
@@ -33,6 +67,7 @@ function LoginModal(props) {
           variant='contained'
           color='secondary'
           textColor='white'  
+          loading={props.loading}
           onClick={() => loginUser()}
         />
         <CustomButton
@@ -86,6 +121,13 @@ function LoginModal(props) {
   )
 }
 
-export default connect(null, {
-  setModal
+const mapStateToProps = (state) => ({
+  loading: state.loading.login
+})
+
+export default connect(mapStateToProps, {
+  setModal,
+  setAlert,
+  setLoading,
+  setProfile
 })(LoginModal);

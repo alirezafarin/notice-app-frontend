@@ -6,6 +6,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { CircularProgress } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -63,8 +64,7 @@ function CustomButton(props) {
       disabled={props.disabled||props.loading}
     >
       {props.loading && (
-        // <CircularProgress className={classes.loading} size={22} thickness={3} color='inherit' />
-        <div></div>
+        <CircularProgress className={classes.loading} size={22} thickness={3} color='inherit' />
       )}
         <div className={classes.text}>{props.text}</div>
     </Button>

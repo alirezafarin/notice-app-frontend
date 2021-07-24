@@ -5,6 +5,7 @@ import {
   SET_MODAL,
   GET_NOTICES,
   GET_NOTICE_DETIALS,
+  SET_PROFILE,
 } from 'redux/types';
 
 ////////////////////////////////////////////////////////////////
@@ -70,8 +71,16 @@ export const setModal = (openModal=false, title='' ,content=null) => {
 
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
-// api calls
+// api calls and data actions
 
+// set profile
+export const setProfile = (profile) => {
+  return {
+    type: SET_PROFILE,
+    payload: profile
+  }
+}
+  
 // get All Notices
 export const getAllNotices = () => {
 

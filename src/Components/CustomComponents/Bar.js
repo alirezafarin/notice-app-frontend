@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { setModal } from 'redux/actions';
 import LoginModal from 'Components/Modals/LoginModal';
 import { Link } from 'react-router-dom';
+import history from 'history/history';
 
 function Bar(props) { 
 
@@ -31,6 +32,7 @@ function Bar(props) {
           color='primary'
           icon='add'
           variant='contained'
+          onClick={() => history.push('/createNotice')}
         />}
       </div>
     </div>

@@ -78,6 +78,7 @@ function RegisterModal(props) {
           variant='contained'
           color='secondary'
           textColor='white'  
+          loading={props.loading}
           onClick={() => registerUser()}
         />
       </>

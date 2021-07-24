@@ -11,6 +11,7 @@ import GlobalAlert from './GlobalAlert';
 import Home from 'Components/Routes/Home';
 import Bar from 'Components/CustomComponents/Bar';
 import Notice from 'Components/Routes/Notice';
+import CreateNotice from 'Components/Routes/CreateNotice';
 
 class App extends React.Component {
   
@@ -25,6 +26,7 @@ class App extends React.Component {
               <Route path="/" exact component={Home} />
               <Route path="/home" exact component={Home} />
               <Route path="/notice/:id" exact component={Notice} />
+              <PrivateRoute path="/createNotice" exact component={CreateNotice} />
               <Redirect to='/' />
             </Switch>
           </div>
@@ -37,7 +39,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-
+  profile: state.profile
 })
 
 export default connect(mapStateToProps)(App);

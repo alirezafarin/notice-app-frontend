@@ -26,7 +26,7 @@ class PrivateRoute extends React.Component {
       // Show the component only when the user is logged in and the token is not expired
       // Otherwise, redirect the user to / page
       <Route exact render={props => (
-          (localStorage.getItem('Token')) ?
+          (returnToken()) ?
               <this.component {...props} {...this.props.computedMatch}/>  //computedMatch will pass the props.match into route as well
           : <Redirect to="/" />
       )} />

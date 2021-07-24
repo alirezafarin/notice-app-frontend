@@ -6,3 +6,7 @@ export const logOut = (deleteUserProfile) => {
 export const returnToken = () => {
   return localStorage.getItem('Token');
 }
+
+export const addToken = (token='') => {
+  localStorage.setItem("Token", token);
+}
