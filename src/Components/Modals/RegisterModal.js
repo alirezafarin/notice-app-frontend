@@ -4,7 +4,8 @@ import Input from 'Components/MuiComponents/Input';
 import PasswordInput from 'Components/MuiComponents/PasswordInput';
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { setAlert, setLoading } from 'redux/actions';
+import { setAlert, setLoading, setModal } from 'redux/actions';
+import LoginModal from './LoginModal';
 
 function RegisterModal(props) {
 
@@ -26,14 +27,27 @@ function RegisterModal(props) {
     return state.password === state.rePass;
   }
 
-  const registerUser = () => {
+  const handleErrors = () => {
+    let hasError = false;
+
     if(areInputsEmpty()) {
-      return setState({ ...state, error: true, errorMsg: 'این فیلد اجباری است' });
+      setState({ ...state, error: true, errorMsg: 'این فیلد اجباری است' });
+      hasError = true;
+    }
+    if(!arePassesEqual()) {
+      setState({ ...state, error: true, errorMsg: 'رمز عبور و تکرار آن مساوی نیستند' });
+      hasError = true;
     }
 
-    if(!arePassesEqual()) {
-      return setState({ ...state, error: true, errorMsg: 'رمز عبور و تکرار آن مساوی نیستند' });
+    return hasError;
+  }
+
+  const registerUser = () => {
+
+    if( handleErrors() ) {
+      return;
     }
+
     // send apiCall
     apiCall({
       url: '/user/signIn',
@@ -48,9 +62,12 @@ function RegisterModal(props) {
       componentProps: props
     })()
     .then((res) => {
-      console.log(res, 'res');
+      if( !res ) {
+        return;
+      }
+      props.setAlert(true, 'با موفقیت ثبت نام شدید.', 'success');
+      props.setModal(true, 'ورود', <LoginModal />);
     })
-    .catch((err) => console.log(err, 'err'))
   }
 
   const renderButton = () => {
@@ -67,8 +84,9 @@ function RegisterModal(props) {
     );
   }
 
-  const hasErrro = (field) => {
-    return (state.error && (state[field].length === 0 || (state.password !== state.rePass)));
+  const hasError = (field) => {
+    let hasErr = (state.error && (state[field].length === 0 || (state.password !== state.rePass)));
+    return hasErr;
   }
 
 	const returnContent = () => {
@@ -113,8 +131,8 @@ function RegisterModal(props) {
         </div>
         <PasswordInput
           fullWidth 
-          error={hasErrro('password')}
-          errorText={(hasErrro('password')) ? state.errorMsg : ''}
+          error={hasError('password')}
+          errorText={(hasError('password')) ? state.errorMsg : ''}
           value={state.password}
           onChange={(e) => setState({ ...state, password: e.target.value })}
         />
@@ -123,8 +141,8 @@ function RegisterModal(props) {
         </div>
         <PasswordInput
           fullWidth 
-          error={hasErrro('rePass')}
-          errorText={(hasErrro('rePass')) ? state.errorMsg : ''}
+          error={hasError('rePass')}
+          errorText={(hasError('rePass')) ? state.errorMsg : ''}
           value={state.rePass}
           onChange={(e) => setState({ ...state, rePass: e.target.value })}
         />
@@ -149,5 +167,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   setAlert,
-  setLoading
+  setLoading,
+  setModal
 })(RegisterModal);

@@ -34,6 +34,23 @@ const setAlertCorrectly = (
   componentProps.setAlert(true, msg, 'error');
 }
 
+const alertErrorMessage = (
+  actionType='',
+  dispatch=null,
+  componentProps={},
+  error={}
+  ) => {
+    let errorData = error.response.data;
+    let msg = 'مشکلی در ارتباط با سرور پیش آمده است';
+    if(errorData && errorData.error) {
+      let errorMsg = errorData.error.split(',')[0];
+      if(errorMsg) {
+        msg = errorMsg;
+      }
+    }  
+    setAlertCorrectly(actionType, dispatch, componentProps, msg);
+  } 
+
 export const apiCall = ({
   method= 'get',
   params= {},
@@ -46,7 +63,7 @@ export const apiCall = ({
   reject= ()=>{}
 }) => {
   return async function(dispatch=null) {
-    // try {
+    try {
       setLoadingCorrectly(loading, actionType, dispatch, componentProps, true);
     
       let response = await axiosInstance({
@@ -59,9 +76,8 @@ export const apiCall = ({
         }
       })
       .catch((err) => {
-        console.log(err.response)
         setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-        setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی در ارتباط با سرور پیش آمده است');
+        alertErrorMessage(actionType, dispatch, componentProps, err);
         reject(err);
       });
 
@@ -81,12 +97,9 @@ export const apiCall = ({
           return response;
         }
       }
-      else {
-        throw new Error('مشکلی پیش آمده است.');
-      }
-    // } catch (error) {
-    //   setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
-    //   setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
-    // }
+    } catch (error) {
+      setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
+      setAlertCorrectly(actionType, dispatch, componentProps, 'مشکلی پیش آمده است');
+    }
   }
 }
