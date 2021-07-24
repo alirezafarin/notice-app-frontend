@@ -7,7 +7,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { CircularProgress } from '@material-ui/core';
-
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
 const useStyles = makeStyles((theme) => ({
   outlined: {
@@ -51,6 +51,7 @@ function CustomButton(props) {
     'next': <NavigateNextIcon color='inherit' />,
     'register': <AssignmentIcon color='inherit' />,
     'profilePhoto': <img src={props.image} className={classes.profilePhoto} />,
+    'before': <NavigateBeforeIcon />,
   };
 
   return (

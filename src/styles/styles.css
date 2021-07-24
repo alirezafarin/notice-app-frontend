@@ -334,6 +334,12 @@
   }
 }
 
+.muiStepper-body {
+  max-width: 856px;
+  margin: auto;
+  padding: 5px;
+}
+
 @font-face {
   font-family: 'Sahel';
   src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
