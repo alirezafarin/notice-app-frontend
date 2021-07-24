@@ -2,6 +2,7 @@ import { useMediaQuery } from '@material-ui/core';
 import NoticeCard from 'Components/CustomComponents/NoticeCard'
 import Spinner from 'Components/CustomComponents/Spinner';
 import CustomButton from 'Components/MuiComponents/CustomButton'
+import history from 'history/history';
 import React from 'react';
 import { connect } from 'react-redux'
 import { getAllNotices } from 'redux/actions';
@@ -29,6 +30,7 @@ function Home(props) {
             color='primary'
             icon='add'
             variant='contained'
+            onClick={() => history.push('/createNotice')}
           />
         </div> 
       }
