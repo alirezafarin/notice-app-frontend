@@ -6,7 +6,7 @@ import { domain } from "globalVariables";
 
 export const axiosInstance = axios.create({
   baseURL: domain,
-  timeout: 10000,
+  // timeout: 10000,
 });
 
 const setLoadingCorrectly = (
@@ -58,6 +58,7 @@ export const apiCall = ({
   body= {},
   actionType= '',
   loading= '',
+  header,
   token=false,
   componentProps= {},
   resolve= ()=>{},
@@ -73,8 +74,10 @@ export const apiCall = ({
         params: params,
         data: body,
         headers: {
-          Authorization: (token) && `Bearer ${returnToken()}`
-        }
+          Authorization: (token) && `Bearer ${returnToken()}`,
+          ...header
+        },
+        credentials: 'include'
       })
       .catch((err) => {
         setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);

@@ -2,6 +2,7 @@ import NoticeMainInfo from 'Components/CustomComponents/NoticeMainInfo';
 import MuiStepper from 'Components/MuiComponents/MuiStepper';
 import React from 'react'
 import NoticeAddress from 'Components/CustomComponents/NoticeAddress';
+import NoticeUpload from 'Components/CustomComponents/NoticeUpload';
 
 function CreateNotice() {
 
@@ -36,7 +37,7 @@ function CreateNotice() {
              setLocation={setLocation}
              location={location}
           />),
-          (<div>three</div>)
+          (<NoticeUpload />)
         ]}
       />
     </div>
