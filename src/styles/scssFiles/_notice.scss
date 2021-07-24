@@ -153,6 +153,30 @@ $radius: 10px;
   padding: 12.5px 14px;
 }
 
+#notice-mainInfo input{
+  padding: 12.5px 14px;
+}
+
+.notice-mainInfo-fields-container-firstRow {
+  @include flex(space-between, center);
+  padding-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .notice-mainInfo-fields-container-firstRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .notice-mainInfo-fields-container-firstRow div{
+    width: 100%;
+  }
+}
+
+.notice-mainInfo-fields-container {
+  max-width: 600px;
+  margin: auto;
+}
 
 @media (max-width: 1000px) {
   .notice-card-item {

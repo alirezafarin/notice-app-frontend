@@ -287,6 +287,47 @@
   padding: 12.5px 14px;
 }
 
+#notice-mainInfo input {
+  padding: 12.5px 14px;
+}
+
+.notice-mainInfo-fields-container-firstRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .notice-mainInfo-fields-container-firstRow {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .notice-mainInfo-fields-container-firstRow div {
+    width: 100%;
+  }
+}
+
+.notice-mainInfo-fields-container {
+  max-width: 600px;
+  margin: auto;
+}
+
 @media (max-width: 1000px) {
   .notice-card-item {
     height: 165px;

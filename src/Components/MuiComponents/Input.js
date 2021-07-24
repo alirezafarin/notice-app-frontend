@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: '5px 0 10px 0',
-    maxWidth: (props) => (props.maxWidth) ? props.maxWidth : '300px',
+    // maxWidth: (props) => (props.maxWidth) ? props.maxWidth : '300px',
   }
 }));
 

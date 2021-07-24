@@ -1,3 +1,4 @@
+import NoticeMainInfo from 'Components/CustomComponents/NoticeMainInfo';
 import MuiStepper from 'Components/MuiComponents/MuiStepper';
 import { darkBlue, lightBlue } from 'globalVariables';
 import React from 'react'
@@ -29,7 +30,7 @@ function CreateNotice() {
         handleBack={handleBack}
         buttonLoading={false}
         components=
-        {[(<div>one</div>),
+        {[(<NoticeMainInfo />),
           (<div>two</div>),
           (<div>three</div>)
         ]}
