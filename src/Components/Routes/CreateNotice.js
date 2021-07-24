@@ -1,11 +1,12 @@
 import NoticeMainInfo from 'Components/CustomComponents/NoticeMainInfo';
 import MuiStepper from 'Components/MuiComponents/MuiStepper';
-import { darkBlue, lightBlue } from 'globalVariables';
 import React from 'react'
+import NoticeAddress from 'Components/CustomComponents/NoticeAddress';
 
 function CreateNotice() {
 
   const [activeStep, setActiveStep] = React.useState(0);
+  const [location, setLocation] =  React.useState([35.807294698537746, 51.428815126419074]);
   const steps = ['اطلاعات اصلی', 'ثبت آدرس', 'آپلود عکس'];
 
   const handleFinish = () => {
@@ -31,7 +32,10 @@ function CreateNotice() {
         buttonLoading={false}
         components=
         {[(<NoticeMainInfo />),
-          (<div>two</div>),
+          (<NoticeAddress
+             setLocation={setLocation}
+             location={location}
+          />),
           (<div>three</div>)
         ]}
       />
