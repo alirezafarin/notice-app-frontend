@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { logOut } from 'globalVariables/helperFunctions';
+import { logOut, returnToken } from 'globalVariables/helperFunctions';
 import { setLoading, setAlert } from 'redux/actions';
 import { domain } from "globalVariables";
 
@@ -58,6 +58,7 @@ export const apiCall = ({
   body= {},
   actionType= '',
   loading= '',
+  token=false,
   componentProps= {},
   resolve= ()=>{},
   reject= ()=>{}
@@ -72,7 +73,7 @@ export const apiCall = ({
         params: params,
         data: body,
         headers: {
-          // token: localStorage.getItem('Token')
+          Authorization: (token) && `Bearer ${returnToken()}`
         }
       })
       .catch((err) => {

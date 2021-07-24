@@ -32,8 +32,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     color: (props) => (props.textColor) ? props.textColor : ''
-  }
+  },
+  profilePhoto: {
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%'
+  },
 }));
+
 
 function CustomButton(props) {
 
@@ -44,6 +50,7 @@ function CustomButton(props) {
     'add': <AddCircleIcon color='inherit' />,
     'next': <NavigateNextIcon color='inherit' />,
     'register': <AssignmentIcon color='inherit' />,
+    'profilePhoto': <img src={props.image} className={classes.profilePhoto} />,
   };
 
   return (

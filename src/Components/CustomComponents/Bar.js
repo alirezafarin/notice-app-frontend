@@ -8,6 +8,7 @@ import { setModal } from 'redux/actions';
 import LoginModal from 'Components/Modals/LoginModal';
 import { Link } from 'react-router-dom';
 import history from 'history/history';
+import ProfileInBar from './ProfileInBar';
 
 function Bar(props) { 
 
@@ -19,13 +20,7 @@ function Bar(props) {
         <img src={megaphone} alt='logo' />
       </Link>
       <div className='bar-buttons'>
-        <CustomButton
-          text='ورود'
-          color='primary'
-          icon='profile'
-          variant='contained'
-          onClick={() => props.setModal(true, 'ورود', <LoginModal />)}
-        />
+        <ProfileInBar />
         {matches && 
           <CustomButton
           text='ثبت آگهی'
