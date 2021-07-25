@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { logOut, returnToken } from 'globalVariables/helperFunctions';
-import { setLoading, setAlert } from 'redux/actions';
+import { setLoading, setAlert, setProfile } from 'redux/actions';
 import { domain } from "globalVariables";
 
 export const axiosInstance = axios.create({
@@ -49,7 +49,19 @@ const alertErrorMessage = (
       }
     }  
     setAlertCorrectly(actionType, dispatch, componentProps, msg);
-  } 
+}
+  
+const handleError = (err = {}, dispatch=null) => {
+  switch(err.response.status) {
+    
+    case 401:
+      logOut(setProfile({}, dispatch));
+      break;
+
+    default: 
+      // do nothing
+  }
+}  
 
 export const apiCall = ({
   method= 'get',
@@ -82,6 +94,7 @@ export const apiCall = ({
       .catch((err) => {
         setLoadingCorrectly(loading, actionType, dispatch, componentProps, false);
         alertErrorMessage(actionType, dispatch, componentProps, err);
+        handleError(err, dispatch);
         reject(err);
       });
 

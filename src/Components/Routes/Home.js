@@ -39,7 +39,7 @@ function Home(props) {
           Component={renderNotices()}
           isLoading={props.loading}
           data={props.notices}
-          // noContentMsg='آگهی وجود ندارد'
+          noContentMsg='آگهی وجود ندارد'
         />
       </div>
     </div>

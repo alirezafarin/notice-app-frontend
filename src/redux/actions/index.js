@@ -75,7 +75,17 @@ export const setModal = (openModal=false, title='' ,content=null) => {
 // api calls and data actions
 
 // set profile
-export const setProfile = (profile) => {
+export const setProfile = (profile, dispatch=null) => {
+  
+  if( dispatch ) {
+    dispatch({
+      type: SET_PROFILE,
+      payload: profile
+    });
+
+    return;
+  }
+  
   return {
     type: SET_PROFILE,
     payload: profile
