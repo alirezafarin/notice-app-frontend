@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'Sahel';
+  src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'Sahel';
+  src: url("./fonts/Sahel-FD-WOL.eot?#") format("eot"), url("./fonts/Sahel-FD-WOL.woff") format("woff"), url("./fonts/Sahel-FD-WOL.ttf") format("truetype");
+  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
 #top-bar {
   position: fixed;
   top: 0;
@@ -569,12 +581,6 @@
 
 .notice-details-buttons button {
   margin: 0 10px;
-}
-
-@font-face {
-  font-family: 'Sahel';
-  src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
-  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
 
 * {

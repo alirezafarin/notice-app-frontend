@@ -15,7 +15,7 @@ export const convertToJalali = (date) => {
   let gy , gm , gd = null;
   gy = Number(date[0]);
   gm = Number(date[1]);
-  gd = Number(date[2]);
+  gd = Number(date[2])+1;
   
   //changing Georgian data to Jalali
   let g_d_m, jy, jm, jd, gy2, days;

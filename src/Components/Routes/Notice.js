@@ -16,6 +16,7 @@ function Notice(props) {
     <Spinner
       Component={<NoticeDetails notice={props.notice} />}
       isLoading={props.loading}
+      firstLoading={true}
       data={props.notice}
       noContentMsg='آگهی وجود ندارد'
     />

@@ -20,7 +20,7 @@ export default function ReactMap(props={getLocation:()=>{},legend:File,legendSiz
     })
 
     return (
-        <MapContainer className='map-container' center={props.markerInitialPosition} zoom={15} scrollWheelZoom={true}>
+        <MapContainer className='map-container' center={props.markerPosition} zoom={15} scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
