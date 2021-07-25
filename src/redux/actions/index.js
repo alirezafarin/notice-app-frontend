@@ -6,6 +6,7 @@ import {
   GET_NOTICES,
   GET_NOTICE_DETIALS,
   SET_PROFILE,
+  GET_PROFILE,
 } from 'redux/types';
 
 ////////////////////////////////////////////////////////////////
@@ -101,5 +102,17 @@ export const getNoticeById = (id='') => {
     url: "/getNoticeById",
     actionType: GET_NOTICE_DETIALS,
     loading: 'getDetails'
+  });
+}
+
+// get userProfile
+export const getProfile = () => {
+
+  return apiCall({
+    method: 'get',
+    url: "/user/getProfile",
+    actionType: GET_PROFILE,
+    loading: 'getProfile',
+    token: true
   });
 }

@@ -1,4 +1,4 @@
-import { SET_PROFILE } from "redux/types"
+import { SET_PROFILE, GET_PROFILE } from "redux/types"
 
 const initialState = {}
 
@@ -7,6 +7,9 @@ export default (state = initialState, { type, payload }) => {
 
   case SET_PROFILE:
     return { ...payload }
+
+  case GET_PROFILE:
+    return { ...payload.user }  
 
   default:
     return state

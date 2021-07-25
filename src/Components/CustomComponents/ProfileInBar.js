@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import profile from 'icons/profile.png';
 import CustomButton from 'Components/MuiComponents/CustomButton';
 import { connect } from 'react-redux';
-import { setModal, setProfile, setAlert, setLoading } from 'redux/actions';
+import { setModal, setProfile, setAlert, setLoading, getProfile } from 'redux/actions';
 import LoginModal from 'Components/Modals/LoginModal';
 import { logOut, returnToken } from 'globalVariables/helperFunctions';
 import { withStyles } from '@material-ui/core/styles';
@@ -58,6 +58,12 @@ function ProfileInBar(props) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
+  useEffect(() => {
+    if( returnToken() ) {
+      props.getProfile();
+    }
+  }, [])
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -102,14 +108,15 @@ function ProfileInBar(props) {
 
     return (
       <>
-        <CustomButton
-          text={'علیرضا آفرین زاده'}
-          icon='profilePhoto'
-          image={profile}
-          ltr
-          onClick={handleClick}
-
-        />
+        {(props.profile.firstName) && 
+          <CustomButton
+            text={`${props.profile.firstName} ${props.profile.lastName}`}
+            icon='profilePhoto'
+            image={profile}
+            ltr
+            onClick={handleClick}
+          />
+        }
         <StyledMenu
           id="customized-menu"
           anchorEl={anchorEl}
@@ -153,5 +160,6 @@ export default connect(mapStateToProps, {
   setModal,
   setProfile,
   setAlert,
-  setLoading
+  setLoading,
+  getProfile
 })(ProfileInBar);
