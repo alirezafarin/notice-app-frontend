@@ -17,12 +17,12 @@ function LoginModal(props) {
     error: false
    });
 
-  const isInputEmpty = () => {
+  const areInputsEmpty = () => {
     return Object.values(state).some((value) => value.length === 0);
   }
 
   const loginUser = () => {
-    if(isInputEmpty()) {
+    if(areInputsEmpty()) {
       return setState({ ...state, error: true });
     }
     

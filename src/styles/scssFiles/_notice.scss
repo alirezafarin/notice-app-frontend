@@ -263,8 +263,13 @@ $radius: 10px;
 .edit-service-editFields-image-item img {
   width: 100%;
   height: 200px;
+  object-fit: contain;
 }
 
 .notice-upload {
   padding-top: 50px;
+}
+
+#notice-mainInfo p {
+  text-align: right;
 }

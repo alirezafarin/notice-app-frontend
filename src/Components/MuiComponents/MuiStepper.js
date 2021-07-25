@@ -92,11 +92,12 @@ function MuiStepper({
                     color='secondary'
                     className={classes.editBtn}
                     onClick={handleFinish}
-                    disabled={buttonLoading}
+                    // disabled={buttonLoading}
+                    loading={buttonLoading}
                   />
                 </div>
                 }
-                {activeStep !== 0 ? 
+                {(activeStep !== 0 && activeStep !==2 ) ? 
                 <div className='muiStepper-back-btn'>
                   <CustomButton
                     variant='outlined'

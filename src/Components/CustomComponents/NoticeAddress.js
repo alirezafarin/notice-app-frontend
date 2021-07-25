@@ -3,7 +3,7 @@ import ReactMap from 'Components/CustomComponents/ReactMap';
 import Marker from 'icons/marker-icon.png';
 import Input from 'Components/MuiComponents/Input';
 
-function NoticeAddress({ setLocation=()=>{}, location=[],  }) {
+function NoticeAddress({ setLocation=()=>{}, location=[], state={}, onChange=()=>{}, error=false }) {
 
   const markerInitialPosition = [35.807294698537746, 51.428815126419074];
 
@@ -24,9 +24,11 @@ function NoticeAddress({ setLocation=()=>{}, location=[],  }) {
         <Input
           fullWidth
           multiline
-          type='number'
-          // value={state.phoneNumber}
-          // onChange={(e) => setState({ ...state, phoneNumber: e.target.value })}
+          type='text'
+          // error={error && state.address.length===0}
+          // errorText={error && state.address.length===0 ? "این فیلد اجباری است" : ''}
+          value={state.address}
+          onChange={(e) => onChange('address', e)}
         />
       </div>
     </div>

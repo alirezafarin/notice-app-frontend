@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from 'Components/MuiComponents/Input';
 
-function NoticeMainInfo() {
+function NoticeMainInfo({ state={}, onChange=()=>{}, error=false }) {
   return (
     <div id='notice-mainInfo'>
       <div className='notice-mainInfo-fields-container'>
@@ -13,8 +13,10 @@ function NoticeMainInfo() {
             <Input
               fullWidth
               type='text'
-              // value={state.phoneNumber}
-              // onChange={(e) => setState({ ...state, phoneNumber: e.target.value })}
+              error={error && state.name.length===0}
+              errorText={error && state.name.length===0 ? "این فیلد اجباری است" : ''}
+              value={state.name}
+              onChange={(e) => onChange('name', e)}
             />
           </div>
           <div>
@@ -24,8 +26,10 @@ function NoticeMainInfo() {
             <Input
               fullWidth
               type='number'
-              // value={state.phoneNumber}
-              // onChange={(e) => setState({ ...state, phoneNumber: e.target.value })}
+              error={error && state.phoneNumber.length===0}
+              errorText={error && state.phoneNumber.length===0 ? "این فیلد اجباری است" : ''}
+              value={state.phoneNumber}
+              onChange={(e) => onChange('phoneNumber', e)}
             />
           </div>
         </div>
@@ -37,9 +41,11 @@ function NoticeMainInfo() {
             <Input
               fullWidth
               multiline
-              type='number'
-              // value={state.phoneNumber}
-              // onChange={(e) => setState({ ...state, phoneNumber: e.target.value })}
+              type='text'
+              error={error && state.description.length===0}
+              errorText={error && state.description.length===0 ? "این فیلد اجباری است" : ''}
+              value={state.description}
+              onChange={(e) => onChange('description', e)}
             />
           </div>
         </div>

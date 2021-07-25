@@ -3,7 +3,8 @@ import { SET_LOADING } from 'redux/types';
 const initialState = {
   getAll: false,
   getDetails: false,
-  login: false
+  login: false,
+  createNotice: false
 }
 
 export default (state = initialState, { type, payload }) => {
