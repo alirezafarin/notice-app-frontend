@@ -1,12 +1,16 @@
 import { Divider } from '@material-ui/core'
-import { domain, red } from 'globalVariables'
+import { domain, markerInitialPosition, red } from 'globalVariables'
 import { convertToJalali } from 'globalVariables/helperFunctions'
 import React from 'react'
+import { connect } from 'react-redux'
 import { useMediaQuery } from '@material-ui/core';
 import Marker from 'icons/marker-icon.png';
 import ReactMap from './ReactMap'
 import CustomButton from 'Components/MuiComponents/CustomButton';
 import history from 'history/history';
+import { setModal, setLoading, setAlert } from 'redux/actions'
+import DeleteModal from 'Components/Modals/DeleteNotice'
+import { apiCall } from 'Components/axiosSettings'
 
 function NoticeDetails({ notice= {}, ...props }) {
 
@@ -27,8 +31,8 @@ function NoticeDetails({ notice= {}, ...props }) {
           getLocation = {() => {}} 
           legend = {Marker} 
           legendSize={[38,58]}
-          markerPosition = {notice.location}
-          markerInitialPosition = {notice.location}
+          markerPosition = {notice.location.length === 0 ? markerInitialPosition : notice.location}
+          markerInitialPosition = {notice.location.length === 0 ? markerInitialPosition : notice.location}
           markerMessage = {<p>موقعیت شما</p>}
         />
         <div>
@@ -60,10 +64,33 @@ function NoticeDetails({ notice= {}, ...props }) {
             text='حذف'
             color='inherit'
             variant='outlined'
+            onClick={() => props.setModal(true, 'حذف آگهی',
+             <DeleteModal
+              delete={() => deleteNoticeApi()}
+              closeModal={() => props.setModal(false)}
+             />)}
           />
         </div>
       </div>
     );
+  }
+
+  const deleteNoticeApi = () => {
+    apiCall({
+      url: `/deleteNotice/${notice._id}`,
+      method: 'delete',
+      loading: 'deleteNotice',
+      token: true,
+      componentProps: props
+    })()
+    .then((res) => {
+      if( !res ) {
+        return;
+      }
+      props.setAlert(true, 'آگهی با موفقیت حذف شد', 'success');
+      props.setModal(false);
+      history.push('/');
+    })
   }
 
   return (
@@ -108,4 +135,8 @@ function NoticeDetails({ notice= {}, ...props }) {
   )
 }
 
-export default NoticeDetails;
+export default connect(null, {
+  setModal,
+  setLoading,
+  setAlert
+})(NoticeDetails);

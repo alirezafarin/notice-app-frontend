@@ -7,6 +7,8 @@ export const darkGrey = '#555555';
 export const pale = '#f7f7f7';
 export const red = '#f44336';
 
+export const markerInitialPosition = [35.807294698537746, 51.428815126419074];
+
 // domain
 export const domain = 'http://192.168.1.9:3500';
 // imageDomain

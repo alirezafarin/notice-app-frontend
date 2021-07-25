@@ -5,7 +5,8 @@ const initialState = {
   getDetails: false,
   login: false,
   createNotice: false,
-  getProfile: false
+  getProfile: false,
+  deleteNotice: false
 }
 
 export default (state = initialState, { type, payload }) => {
