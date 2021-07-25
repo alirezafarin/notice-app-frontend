@@ -431,6 +431,10 @@
   text-align: right;
 }
 
+.home-color {
+  color: #47a4eb !important;
+}
+
 @font-face {
   font-family: 'Sahel';
   src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");

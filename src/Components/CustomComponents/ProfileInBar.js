@@ -12,6 +12,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LogoutModal from 'Components/Modals/LogoutModal';
 import { apiCall } from 'Components/axiosSettings';
+import HomeIcon from '@material-ui/icons/Home';
+import history from 'history/history';
 
 const StyledMenu = withStyles({
   paper: {
@@ -47,6 +49,10 @@ const StyledMenuItem = withStyles((theme) => ({
     },
   },
 }))(MenuItem);
+
+// const useStyles = makeStyles((theme) => ({
+
+// });
 
 function ProfileInBar(props) { 
 
@@ -111,6 +117,13 @@ function ProfileInBar(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
+        <StyledMenuItem
+          color='secondary'
+          onClick={() => history.push('/')}
+        >
+          <HomeIcon color='secondary' />
+          <span className='home-color'>خانه</span>
+        </StyledMenuItem>
         <StyledMenuItem
           onClick={() => 
             props.setModal(true, 'خروج', <LogoutModal
