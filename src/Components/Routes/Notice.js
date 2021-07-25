@@ -1,3 +1,5 @@
+import NoticeDetails from 'Components/CustomComponents/NoticeDetails';
+import Spinner from 'Components/CustomComponents/Spinner';
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getNoticeById } from 'redux/actions';
@@ -11,9 +13,12 @@ function Notice(props) {
   }, [noticeId])
   
   return (
-    <div>
-      Notice
-    </div>
+    <Spinner
+      Component={<NoticeDetails notice={props.notice} />}
+      isLoading={props.loading}
+      data={props.notice}
+      noContentMsg='آگهی وجود ندارد'
+    />
   )
 }
 

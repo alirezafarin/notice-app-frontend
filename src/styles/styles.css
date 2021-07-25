@@ -435,6 +435,117 @@
   color: #47a4eb !important;
 }
 
+#notice-details {
+  max-width: 1024px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 0 10px;
+}
+
+.notice-details-info {
+  width: 48%;
+}
+
+.notice-details-images {
+  width: 48%;
+  margin: 0 auto;
+}
+
+.notice-details-images img {
+  width: 100%;
+  max-width: 500px;
+  height: 80%;
+}
+
+.notice-details-info-name {
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notice-details-info-description {
+  font-size: 16px;
+  color: #555555;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.notice-details-info-phoneNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 5px 0;
+  border-bottom: 1px solid #e0e4ec;
+}
+
+.notice-details-info-phoneNumber-title {
+  color: #555555;
+}
+
+.notice-details-info-address-title {
+  color: #555555;
+  margin: 0 5px;
+}
+
+@media (max-width: 700px) {
+  #notice-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .notice-details-info {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .notice-details-images {
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 15px;
+  }
+  .notice-details-image-container {
+    text-align: center;
+  }
+  .notice-details-map {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
 @font-face {
   font-family: 'Sahel';
   src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
@@ -552,5 +663,9 @@ input {
 
 .logout-modal-btns button {
   margin: 0 5px;
+}
+
+.no-content-yet {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -277,3 +277,82 @@ $radius: 10px;
 .home-color {
   color: $dark-blue !important;
 }
+
+#notice-details {
+  max-width: 1024px;
+  margin: auto;
+  @include flex(space-evenly, flex-start);
+  padding: 0 10px;
+}
+
+.notice-details-info {
+  width: 48%;
+}
+
+.notice-details-images {
+  width: 48%;
+  margin: 0 auto;
+}
+
+.notice-details-images img {
+  width: 100%;
+  max-width: 500px;
+  height: 80%;
+}
+
+.notice-details-info-name {
+  font-size: 20px;
+  color: $black;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notice-details-info-description {
+  font-size: 16px;
+  color: $dark-grey;
+  text-align: justify;
+  // font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.notice-details-info-phoneNumber {
+  @include flex(space-between, center);
+  padding: 5px 0;
+  border-bottom: 1px solid $grey;
+}
+
+.notice-details-info-phoneNumber-title {
+  color: $dark-grey
+}
+
+.notice-details-info-address-title {
+  color: $dark-grey;
+  margin: 0 5px;
+}
+
+@media( max-width: 700px ) {
+  #notice-details {
+    flex-direction: column;
+  }
+  
+  .notice-details-info {
+    width: 100%;
+    order: 2;
+  }
+  
+  .notice-details-images {
+    width: 100%;
+    order: 1;
+    margin-bottom: 15px;
+  }
+
+  .notice-details-image-container {
+    text-align: center;
+  }
+
+  .notice-details-map {
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

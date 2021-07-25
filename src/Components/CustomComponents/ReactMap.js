@@ -3,7 +3,7 @@ import {useMapEvents,MapContainer,TileLayer,Marker,Popup} from 'react-leaflet';
 import {Icon} from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-export default function LeafletMap(props={getLocation:()=>{},legend:File,legendSize:[25,25],markerPosition:[],markerInitialPosition:[],markerMessage:Element}) {
+export default function ReactMap(props={getLocation:()=>{},legend:File,legendSize:[25,25],markerPosition:[],markerInitialPosition:[],markerMessage:Element}) {
 
     const LocationMarker = () => {
         const map = useMapEvents({
