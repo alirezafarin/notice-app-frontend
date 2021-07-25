@@ -453,7 +453,7 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 
 .notice-details-info {
@@ -546,6 +546,31 @@
   }
 }
 
+.notice-details-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 10px 0;
+  max-width: 1040px;
+  margin: auto;
+}
+
+.notice-details-buttons button {
+  margin: 0 10px;
+}
+
 @font-face {
   font-family: 'Sahel';
   src: url("./fonts/Sahel.eot?#") format("eot"), url("./fonts/Sahel.woff") format("woff"), url("./fonts/Sahel.ttf") format("truetype");
@@ -589,7 +614,7 @@ body {
 }
 
 .inbetween-bars {
-  padding-top: 80px;
+  padding-top: 60px;
   max-width: 1500px;
   margin: auto;
 }

@@ -8,6 +8,8 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { CircularProgress } from '@material-ui/core';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   outlined: {
@@ -52,6 +54,8 @@ function CustomButton(props) {
     'register': <AssignmentIcon color='inherit' />,
     'profilePhoto': <img src={props.image} className={classes.profilePhoto} />,
     'before': <NavigateBeforeIcon />,
+    'edit': <EditIcon />,
+    'delete': <DeleteIcon />,
   };
 
   return (

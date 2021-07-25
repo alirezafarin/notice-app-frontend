@@ -12,6 +12,7 @@ import Home from 'Components/Routes/Home';
 import Bar from 'Components/CustomComponents/Bar';
 import Notice from 'Components/Routes/Notice';
 import CreateNotice from 'Components/Routes/CreateNotice';
+import EditNotice from 'Components/Routes/EditNotice';
 
 class App extends React.Component {
   
@@ -27,6 +28,7 @@ class App extends React.Component {
               <Route path="/home" exact component={Home} />
               <Route path="/notice/:id" exact component={Notice} />
               <PrivateRoute path="/createNotice" exact component={CreateNotice} />
+              <PrivateRoute path="/editNotice/:id" exact component={EditNotice} />
               <Redirect to='/' />
             </Switch>
           </div>

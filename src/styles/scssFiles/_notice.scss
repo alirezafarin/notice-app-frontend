@@ -282,7 +282,7 @@ $radius: 10px;
   max-width: 1024px;
   margin: auto;
   @include flex(space-evenly, flex-start);
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 
 .notice-details-info {
@@ -355,4 +355,15 @@ $radius: 10px;
     width: 100%;
     margin: 10px 0;
   }
+}
+
+.notice-details-buttons {
+  @include flex();
+  padding: 10px 0;
+  max-width: 1040px;
+  margin: auto;
+}
+
+.notice-details-buttons button {
+  margin: 0 10px;
 }

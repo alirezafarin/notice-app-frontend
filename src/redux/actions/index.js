@@ -101,7 +101,8 @@ export const getNoticeById = (id='') => {
     params: { id },
     url: "/getNoticeById",
     actionType: GET_NOTICE_DETIALS,
-    loading: 'getDetails'
+    loading: 'getDetails',
+    token: true
   });
 }
 
