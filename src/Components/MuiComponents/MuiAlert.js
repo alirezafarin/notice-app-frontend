@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     left: '0px',
     right: '0px',
-    bottom: '10px',
+    top: '50%',
+    transform: 'translate(0%,-50%)',
+    // bottom: '10px',
     zIndex: '2030'
   },
   action: {
