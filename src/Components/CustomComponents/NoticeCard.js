@@ -5,6 +5,7 @@ import { domain } from 'globalVariables';
 import { useMediaQuery } from '@material-ui/core';
 import history from 'history/history';
 import { Link } from 'react-router-dom';
+import { returnImage } from 'globalVariables/helperFunctions';
 
 export default function NoticeCard({ notice={}, ...props }) {
 
@@ -14,7 +15,7 @@ export default function NoticeCard({ notice={}, ...props }) {
     return(
       <>
         <div className='notice-card-item-img'>
-          <img src={domain + '/' + notice.imageName} alt='' />
+          <img src={returnImage(notice.imageName)} alt='' />
         </div>
         <div className='notice-card-item-details'>
           <div className='notice-card-item-details-name'>

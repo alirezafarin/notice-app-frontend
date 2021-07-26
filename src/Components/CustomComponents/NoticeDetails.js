@@ -1,6 +1,6 @@
 import { Divider } from '@material-ui/core'
 import { domain, markerInitialPosition, red } from 'globalVariables'
-import { convertToJalali } from 'globalVariables/helperFunctions'
+import { convertToJalali, returnImage } from 'globalVariables/helperFunctions'
 import React from 'react'
 import { connect } from 'react-redux'
 import { useMediaQuery } from '@material-ui/core';
@@ -124,7 +124,7 @@ function NoticeDetails({ notice= {}, ...props }) {
         </div>
         <div className='notice-details-images'>
           <div className='notice-details-image-container'>
-            <img src={domain + '/' + notice.imageName} alt='' />
+            <img src={returnImage(notice.imageName)} alt='' />
           </div>
           {!matches && renderMap(notice)}
         </div>

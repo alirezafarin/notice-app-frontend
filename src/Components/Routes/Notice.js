@@ -10,7 +10,7 @@ function Notice(props) {
 
   useEffect(() => {
     props.getNoticeById(noticeId);
-  }, [noticeId])
+  }, [noticeId, props.profile])
   
   return (
     <Spinner
@@ -25,7 +25,8 @@ function Notice(props) {
 
 const mapStateToProps = (state, ownProps) => ({
   loading: state.loading.getDetails,
-  notice: state.notices.noticeDetails[ownProps.match.params.id]
+  notice: state.notices.noticeDetails[ownProps.match.params.id],
+  profile: state.profile
 })
 
 export default connect(mapStateToProps, {

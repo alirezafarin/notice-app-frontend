@@ -1,3 +1,6 @@
+import { domain } from "globalVariables";
+import placeholder from 'icons/placeholder.jpg';
+
 export const logOut = (deleteUserProfile) => {
   localStorage.removeItem('Token');
   deleteUserProfile();
@@ -15,7 +18,7 @@ export const convertToJalali = (date) => {
   let gy , gm , gd = null;
   gy = Number(date[0]);
   gm = Number(date[1]);
-  gd = Number(date[2])+1;
+  gd = Number(date[2]);
   
   //changing Georgian data to Jalali
   let g_d_m, jy, jm, jd, gy2, days;
@@ -47,4 +50,11 @@ export const convertToJalali = (date) => {
   date[4] = jm.toString();
   date[3] = jd.toString(); 
   return [date[5], date[4], date[3]];    
+}
+
+export const returnImage = (imageName='') => {
+  if( imageName ) {
+    return domain + '/' + imageName;
+  }
+  return placeholder;
 }
